@@ -8,7 +8,7 @@
                 <div class="col-sm-2">
                     <div class="companyinfo">
                         <h2><span>Your</span>Cart</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+                        <p>We deliver to your door step</p>
                     </div>
                 </div>
                 <div class="col-sm-7">
@@ -16,8 +16,8 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="address">
-                        <img src="images/home/map.png" alt="" />
-                        <p>Egypt , Alexandria </p>
+                        <img src="../images/home/map.png" alt="" />
+                        <p>Sri lanka </p>
                     </div>
                 </div>
             </div>
@@ -39,16 +39,14 @@
 
 
 
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.scrollUp.min.js"></script>
-<script src="js/jquery.prettyPhoto.js"></script>
-<script src="js/price-range.js"></script>
-<script src="js/main.js"></script>
-<script src="js/myLoginValidation.js"></script>
-<script src="js/bootstrap-notify.min.js"></script>
-<script src="js/notify.js"></script>
-<script src="js/addtocart.js"></script>
-
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.scrollUp.min.js"></script>
+<script src="../js/jquery.prettyPhoto.js"></script>
+<script src="../js/price-range.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/bootstrap-notify.min.js"></script>
+<script src="../js/notify.js"></script>
+<script src="../js/myLoginValidation.js"></script>
 </body>
 </html>

@@ -1,57 +1,146 @@
 
-<%@ page import="org.yourcart.controller.user.IndexProductServlet" %> 
-<%--<jsp:include page="/IndexProductServlet"/> --%> 
-<%-- include header file --%> 
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="header.jsp" %>
-
-
 <%-- include slider file --%> 
-<%@include file="slider.jsp" %>
 
 
 <%-- include slidebar file --%> 
 <%@include file="slidebar.jsp" %>
-<jsp:include page="/IndexProductServlet"/>
-<div class="col-sm-9 padding-right">
-    <div class="features_items"><!--features_items-->
-        <h2 class="title text-center">New Items</h2>
 
-        <c:if test="${!empty requestScope.limitedProducts}">
+<jsp:include page="AdminIndex"/>
 
-            <c:forEach items="${requestScope.limitedProducts}" var="product">
 
-                <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src=${product.photo} alt="" />
-                                <h2>$${product.price}</h2>
-                                <p>${product.name}</p>
-                                <a class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                            </div>
-                            <div class="product-overlay">
-                                <div class="overlay-content">
-                                    <h2>$${product.price}</h2>
-                                    <p>${product.name}</p>
-                                    <a  id="${product.productId}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                </div>
-                            </div>
-                            <img src="images/home/new.png" class="new" alt="" />
+    <div class="col-sm-9 padding-right">
+        <p>Online Users : ${onlineUser} | profit : ${profit}</p>
+        <div class="features_items">
+           <div class="col-sm-4">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <i class="fa fa-shopping-bag fa-5x" aria-hidden="true" ></i>
+                            <h2>Product details</h2>
+
+                            <a href="AdminProductServlet" class="btn btn-default my_btn"><i class="fa fa-shopping-bag"></i> products</a>
                         </div>
-                        <div class="choose">
-                            <ul class="nav nav-pills nav-justified">
-                                <li><a href="Product?id=${product.productId}"><i class="fa fa-plus-square"></i>View Details</a></li>
-                            </ul>
+                        <div class="product-overlay">
+                            <div class="overlay-content">
+                                <h2>Here you can view Products , add or delete them</h2>
+                                <a href="AdminProductServlet" class="btn btn-default my_btn"><i class="fa fa-shopping-bag" ></i> products</a>
+
+                            </div>
                         </div>
+
                     </div>
                 </div>
-            </c:forEach>
-        </c:if>
+            </div>
+            <div class="col-sm-4">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <i class="fa fa-user-circle fa-5x" aria-hidden="true" ></i>
+                            <h2>Users details</h2>
 
-    </div><!--features_items-->
-</div>
-</div>
-</div>
+                            <a href="AdminUserServlet" class="btn btn-default my_btn"><i class=" fa fa-user-circle"></i> Users</a>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="overlay-content">
+                                <h2>Here you can view Users , add or delete them</h2>
+                                <a href="AdminUserServlet" class="btn btn-default my_btn"><i class="fa fa-user-circle" ></i> Users</a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <i class="fa fa-pie-chart fa-5x" aria-hidden="true" ></i>
+                            <h2>Categories</h2>
+
+                            <a href="AdminCategoryServlet" class="btn btn-default my_btn"><i class=" fa fa-pie-chart "></i> Categories</a>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="overlay-content">
+                                <h2>Here you can view Categories , add or delete them </h2>
+                                <a href="AdminCategoryServlet" class="btn btn-default my_btn"><i class="fa fa-pie-chart" ></i> Categories</a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div> 
+
+            <div class="col-sm-4">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <i class="fa fa-file-text fa-5x" aria-hidden="true" ></i>
+                            <h2>History</h2>
+
+                            <a href="AdminHistoryServlet" class="btn btn-default my_btn"><i class=" fa fa-file-text "></i> History</a>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="overlay-content">
+                                <h2>Here you can view History </h2>
+                                <a href="AdminHistoryServlet" class="btn btn-default my_btn"><i class="fa fa-file-text" ></i> History</a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div> 
+            
+            <div class="col-sm-4">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <i class="fa fa-sort fa-5x" aria-hidden="true" ></i>
+                            <h2>Slider</h2>
+
+                            <a href="SlidersShow" class="btn btn-default my_btn"><i class=" fa fa-sort "></i> Slider</a>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="overlay-content">
+                                <h2>Here you can choose which products will appear in the slider </h2>
+                                <a href="SlidersShow" class="btn btn-default my_btn"><i class="fa fa-sort" ></i> Slider</a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <i class="fa fa-bullhorn fa-5x" aria-hidden="true" ></i>
+                            <h2>Ads</h2>
+
+                            <a href="ShowAdvertisement" class="btn btn-default my_btn"><i class="fa fa-bullhorn "></i> Ads</a>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="overlay-content">
+                                <h2>Here you can Add Ads </h2>
+                                <a href="ShowAdvertisement" class="btn btn-default my_btn"><i class="fa fa-bullhorn" ></i> Ads</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+      
+    </div>
 </section>
 
 
